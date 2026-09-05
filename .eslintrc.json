@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "webextensions": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "no-undef": "off",
+    "no-console": "off",
+    "semi": ["warn", "always"]
+  },
+  "overrides": [
+    {
+      "files": ["tests/**/*.js", "*.config.js", "vitest.config.js"],
+      "parserOptions": {
+        "sourceType": "module"
+      }
+    }
+  ]
+}

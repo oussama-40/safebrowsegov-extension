@@ -1,0 +1,24 @@
+# === Node ===
+node_modules/
+dist/
+coverage/
+npm-debug.log*
+
+# === Environment / secrets ===
+.env
+.env.local
+*.pem
+*.key
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === IDE ===
+.vscode/
+.idea/
+
+# === Chrome extension build artifacts ===
+*.crx
+*.pem
+web-ext-artifacts/

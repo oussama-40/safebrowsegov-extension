@@ -1,0 +1,25 @@
+{
+  "name": "safebrowsegov",
+  "version": "3.0.0",
+  "description": "Protection citoyenne contre le phishing et l'usurpation de domaines gouvernementaux marocains",
+  "main": "background.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "security",
+    "anti-phishing",
+    "morocco",
+    "chrome-extension",
+    "manifest-v3",
+    "typosquatting"
+  ],
+  "author": "SafeBrowseGov Team",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "vitest": "^1.6.0"
+  }
+}
