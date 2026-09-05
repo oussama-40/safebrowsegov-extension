@@ -22,3 +22,27 @@ Thumbs.db
 *.crx
 *.pem
 web-ext-artifacts/
+# === Portfolio mode: hide source code from GitHub ===
+manifest.json
+background.js
+blocked.html
+blocked.js
+content.js
+options.html
+options.js
+popup.html
+popup.js
+package.json
+package-lock.json
+.eslintrc.json
+vitest.config.js
+CHANGELOG.md
+PRIVACY.md
+data/
+rules/
+styles/
+tests/
+utils/
+icons/
+_metadata/
+.github/

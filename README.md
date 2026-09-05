@@ -1,29 +1,27 @@
 <p align="center">
-  <img src="icons/logo.png" alt="Logo SafeBrowseGov" width="96">
+  <img src="images/logo.png" alt="Logo SafeBrowseGov" width="96">
 </p>
 
 <h1 align="center">SafeBrowseGov — Protection Gouvernementale 🇲🇦</h1>
 
 <p align="center">
-  <img src="https://github.com/oussama-40/safebrowsegov-extension/actions/workflows/ci.yml/badge.svg" alt="CI">
   <img src="https://img.shields.io/badge/manifest-v3-green.svg" alt="Manifest V3">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License MIT">
+  <img src="https://img.shields.io/badge/status-portfolio%20showcase-orange.svg" alt="Portfolio showcase">
 </p>
 
 <p align="center">
 Extension de navigateur (Chrome / Edge / Brave — Manifest V3) qui protège les citoyens marocains contre le phishing gouvernemental, l'usurpation de domaines (typosquatting, homographes Unicode) et les publicités intrusives — <strong>100 % locale, sans collecte de données</strong>.
 </p>
 
+> 📌 **Ce dépôt est une vitrine de présentation du projet.** Le code source n'est pas publié publiquement. Pour toute demande d'accès ou de collaboration, contacte-moi via GitHub.
+
 ## Table des matières
 - [Contexte & objectifs](#contexte--objectifs)
 - [Fonctionnalités](#fonctionnalités)
+- [Aperçu](#aperçu)
 - [Architecture](#architecture)
 - [Technologies utilisées](#technologies-utilisées)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Utilisation](#utilisation)
-- [Tests & CI](#tests--ci)
-- [Structure du projet](#structure-du-projet)
 - [Confidentialité](#confidentialité)
 - [Auteurs](#auteurs)
 - [Licence](#licence)
@@ -49,7 +47,7 @@ Le projet combine :
 - 🔒 **Historique local chiffré** (AES-GCM) — rien ne quitte jamais l'appareil.
 - ♿ **Accessibilité WCAG AA** (aria-live, navigation clavier, contrastes renforcés).
 
-### Aperçu
+## Aperçu
 
 **Page de blocage** — domaine sur liste noire, score 85/100 :
 
@@ -85,72 +83,9 @@ Le projet combine :
 - **Vitest** pour les tests unitaires, **ESLint** pour le linting
 - **GitHub Actions** pour l'intégration continue
 
-## Installation
-
-```bash
-git clone https://github.com/oussama-40/safebrowsegov-extension.git
-cd safebrowsegov-extension
-npm install
-```
-
-Puis charger l'extension en mode développeur :
-1. Ouvrir `chrome://extensions` (ou l'équivalent Edge/Brave)
-2. Activer le **Mode développeur**
-3. Cliquer sur **Charger l'extension non empaquetée** et sélectionner le dossier du projet
-
-## Configuration
-
-Accessible via clic droit sur l'icône de l'extension → **Options** :
-- **Sensibilité** : curseur ajustant les seuils du score de risque
-- **Liste blanche** : domaines personnels exclus de l'analyse
-- **Bloqueur de publicités** : activation/désactivation indépendante
-- **Mode strict** : blocage renforcé des popups et redirections JavaScript
-- **Signalements** : consultation et suppression des faux positifs remontés
-
-## Utilisation
-
-L'icône de la barre d'outils affiche un badge reflétant le niveau de risque du site actif. Un clic ouvre le popup avec le score détaillé, les indicateurs déclenchés et les statistiques de protection (sites bloqués, alertes émises, publicités retirées). En cas de risque élevé, une page d'interstitiel s'affiche avant tout accès au site, avec la possibilité de revenir en sécurité ou de continuer en connaissance de cause.
-
-## Tests & CI
-
-```bash
-npm test        # Exécute les tests unitaires (Vitest)
-npm run lint     # Vérifie le style de code (ESLint)
-```
-
-Le pipeline **GitHub Actions** (`.github/workflows/ci.yml`) valide automatiquement la syntaxe JSON des fichiers de règles, exécute le lint et les tests à chaque `push` et `pull request` sur `main`.
-
-## Structure du projet
-
-```
-safebrowsegov-extension/
-├── background.js        # Service worker : analyse, scoring, alarmes
-├── content.js            # Nettoyage DOM des publicités
-├── popup.html / popup.js         # Interface popup
-├── options.html / options.js     # Page de réglages
-├── blocked.html / blocked.js     # Page d'interstitiel/blocage
-├── manifest.json          # Configuration Manifest V3
-├── utils/
-│   ├── scoring.js          # Moteur de scoring pur (testable)
-│   ├── levenshtein.js      # Distance de Levenshtein
-│   ├── blacklist.js        # Chargeur de règles
-│   └── crypto.js           # Chiffrement local AES-GCM
-├── data/
-│   ├── rules.json           # Listes noires/blanches, domaines officiels
-│   ├── confusables.json     # Table Unicode des homographes
-│   └── remote-blocklist.js  # Téléchargement des listes distantes
-├── rules/
-│   └── ad-blocking-rules.json   # Règles declarativeNetRequest
-├── tests/
-│   └── scoring.test.js      # Tests unitaires (Vitest)
-├── icons/                    # Icônes de l'extension
-├── styles/                    # Feuilles de style
-└── .github/workflows/ci.yml  # Pipeline CI
-```
-
 ## Confidentialité
 
-SafeBrowseGov ne collecte **aucune donnée personnelle** et n'effectue **aucun traçage**. Toute l'analyse des URLs se fait localement dans le navigateur ; seules des requêtes GET anonymes vers des dépôts publics de listes de menaces sont effectuées, sans transmission d'identifiant ni d'historique de navigation. Voir [PRIVACY.md](./PRIVACY.md) pour le détail complet des permissions et de leur justification.
+SafeBrowseGov ne collecte **aucune donnée personnelle** et n'effectue **aucun traçage**. Toute l'analyse des URLs se fait localement dans le navigateur ; seules des requêtes GET anonymes vers des dépôts publics de listes de menaces sont effectuées, sans transmission d'identifiant ni d'historique de navigation.
 
 ## Auteurs
 
@@ -161,4 +96,4 @@ GitHub : [@oussama-40](https://github.com/oussama-40)
 
 ## Licence
 
-Ce projet est distribué sous licence **MIT** — voir le fichier [LICENSE](./LICENSE).
+Ce projet est distribué sous licence **MIT**.
